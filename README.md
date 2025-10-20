@@ -16,12 +16,6 @@
 
 ```
 
-<<<<<<< HEAD
-* org.ruyisdk.core:基础类，供其它插件调用的公共部分
-* org.ruyisdk.devices:RISC-V设备管理
-* org.ruyisdk.packages:包资源管理器
-* org.ruyisdk.intro:定制化欢迎界面
-=======
 ## 插件说明
 
 * **org.ruyisdk.core**: 基础类库，提供其它插件调用的公共功能
@@ -132,5 +126,4 @@ Copyright (c) 2024 RuyiSDK and others.
 
 - 提交问题: https://github.com/ruyisdk/ruyisdk-eclipse-plugins/issues
 - 讨论区: https://github.com/ruyisdk/ruyisdk-eclipse-plugins/discussions
->>>>>>> 6fc65ec (feat: add auto-update functionality via GitHub Pages)
 
