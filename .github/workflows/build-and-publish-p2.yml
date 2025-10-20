@@ -37,7 +37,7 @@ jobs:
         cp -r repository/target/repository/* p2-site/
         
         # 创建索引页面
-        cat > p2-site/index.html << 'EOF'
+        cat > p2-site/index.html << EOF
         <!DOCTYPE html>
         <html>
         <head>
