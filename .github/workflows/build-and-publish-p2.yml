@@ -2,11 +2,12 @@ name: Build and Publish P2 Repository
 
 on:
   push:
-    branches: [ main, master ]
+    # 允许在任何分支推送时触发（包括 feature 分支）
     paths:
       - 'plugins/**'
       - 'features/**'
       - 'pom.xml'
+      - '.github/workflows/**'
   pull_request:
     branches: [ main, master ]
   workflow_dispatch:
@@ -81,7 +82,8 @@ jobs:
         EOF
         
     - name: Deploy to GitHub Pages
-      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      # 只要是推送事件就部署，支持 feature 分支开发测试
+      if: github.event_name == 'push'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
