@@ -9,6 +9,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.jface;bundle-version="3.35.0",
  org.ruyisdk.core,
  com.google.gson;bundle-version="2.11.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Automatic-Module-Name: org.ruyisdk.devices
 Bundle-ActivationPolicy: lazy

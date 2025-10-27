@@ -4,4 +4,4 @@ Bundle-Name: Ui
 Bundle-SymbolicName: org.ruyisdk.ui
 Bundle-Version: 0.0.4.qualifier
 Automatic-Module-Name: org.ruyisdk.ui
-Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-RequiredExecutionEnvironment: JavaSE-17
