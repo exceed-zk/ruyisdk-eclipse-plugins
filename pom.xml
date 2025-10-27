@@ -157,7 +157,5 @@
       </plugin>
     </plugins>
   </build>
-  
-  <!-- Trigger CI build -->
 </project>
 
