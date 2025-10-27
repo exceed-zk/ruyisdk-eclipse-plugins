@@ -96,7 +96,7 @@ jobs:
         EOF
         
     - name: Create Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@c062e08bd532815e2082a85e87e3ef29c3e6d191 # v2.0.8
       with:
         tag_name: ${{ steps.version.outputs.VERSION }}
         name: RuyiSDK Plugins ${{ steps.version.outputs.VERSION }}
