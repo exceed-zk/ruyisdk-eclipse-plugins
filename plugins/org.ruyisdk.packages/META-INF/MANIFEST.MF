@@ -13,7 +13,7 @@ Require-Bundle:
  org.ruyisdk.core,
  org.ruyisdk.ruyi
 Bundle-ClassPath: ., lib/javax.json-1.1.4.jar
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: org.ruyisdk.packages
 
 

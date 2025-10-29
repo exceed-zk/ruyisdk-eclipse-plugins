@@ -18,10 +18,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
       
-    - name: Set up JDK 17
+    - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
-        java-version: '17'
+        java-version: '21'
         distribution: 'temurin'
         cache: 'maven'
         
@@ -81,7 +81,7 @@ jobs:
         ##  系统要求
         
         - Eclipse 2024-9 或更高版本
-        - Java 17 或更高版本（兼容 Java 17-25）
+        - Java 21 或更高版本（兼容 Java 17-25）
         - 支持架构：x86_64, aarch64, riscv64
         
         ##  文档（已移动待修改）

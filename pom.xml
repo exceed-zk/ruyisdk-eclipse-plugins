@@ -117,7 +117,7 @@
         <artifactId>tycho-compiler-plugin</artifactId>
         <version>${tycho.version}</version>
         <configuration>
-          <release>17</release>
+          <release>21</release>
           <compilerArgs>
             <arg>-proc:none</arg>
           </compilerArgs>
