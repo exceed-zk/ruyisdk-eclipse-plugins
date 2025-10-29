@@ -67,7 +67,10 @@ mvn clean verify
 
 # 2. 构建包含插件的 RuyiSDK IDE
 cd ../ruyisdk-eclipse-packages
-mvn clean verify -Pepp.package.embedcpp -Pepp.materialize-products
+mvn clean verify -Pepp.p2.common -Pepp.product.embedcpp -Pepp.p2.embedcpp -Pepp.materialize-products
+
+# 3. 获取构建产物
+ls -l ./packages/org.eclipse.epp.package.embedcpp.product/target/products/ruyisdk-*.tar.gz
 ```
 
 详细的构建说明和故障排除，请参阅 [BUILD.md](BUILD.md)。
