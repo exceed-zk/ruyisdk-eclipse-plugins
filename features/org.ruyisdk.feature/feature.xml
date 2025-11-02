@@ -2,7 +2,7 @@
 <feature
       id="org.ruyisdk.feature"
       label="RuyiSDK IDE Feature"
-      version="0.0.4.qualifier"
+      version="0.0.5.qualifier"
       provider-name="RuyiSDK">
 
    <description url="https://github.com/ruyisdk">
@@ -348,4 +348,3 @@
          unpack="false"/>
 
 </feature>
-
