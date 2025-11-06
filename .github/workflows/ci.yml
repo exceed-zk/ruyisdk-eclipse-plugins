@@ -7,7 +7,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  output_file_name: "ruyisdk-eclipse-plugins.site.tar.gz"
+  output_file_name: "ruyisdk-eclipse-plugins.site.zip"
 
 jobs:
   dco:
@@ -85,11 +85,14 @@ jobs:
         run: |
           set -ex
 
+          input_dir_path="$PWD/sites/repository/target/repository/"
           output_file_path="$(mktemp -d)/${{ env.output_file_name }}"
-          tar -C "$PWD/sites/repository/target/repository/" -czf "$output_file_path" '.'
-          echo 'output_file_list<<EOF' >> $GITHUB_OUTPUT
-            tar -tf "$output_file_path" >> $GITHUB_OUTPUT
-          echo 'EOF' >> $GITHUB_OUTPUT
+          pushd "$input_dir_path"
+            echo 'output_file_list<<EOF' >> $GITHUB_OUTPUT
+              find . -type f >> $GITHUB_OUTPUT
+            echo 'EOF' >> $GITHUB_OUTPUT
+            find . -type f -print0 | xargs -0 zip -9 "$output_file_path"
+          popd
           echo "output_file_path=$output_file_path" >> "$GITHUB_OUTPUT"
 
       - name: Upload Artifact for Release
@@ -205,7 +208,7 @@ jobs:
 
           output_dir_path='${{ github.workspace }}/.github/resources/website/'
           pushd "$output_dir_path"
-            tar -xf '${{ steps.download.outputs.download-path }}/${{ env.output_file_name }}'
+            unzip '${{ steps.download.outputs.download-path }}/${{ env.output_file_name }}'
             for f in 'index.html' 'index.zh_Hans.html'; do
               # update datetime
               sed -i "s!%PUBLISH_DATE%!$datetime!g" "$f"
