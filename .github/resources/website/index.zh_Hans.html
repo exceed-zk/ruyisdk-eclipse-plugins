@@ -2,7 +2,7 @@
 <html lang="zh-Hans">
 
 <head>
-    <title>RuyiSDK Eclipse 插件的更新站点</title>
+    <title>RuyiSDK Eclipse 插件更新站点</title>
     <link rel="icon" href="./favicon.ico" />
     <!-- https://stackoverflow.com/questions/14669352/is-the-charset-attribute-required-with-html5 -->
     <meta charset="utf-8" />
@@ -25,6 +25,7 @@
         span#title {
             color: #2c3e50;
         }
+
         @media (prefers-color-scheme: dark) {
             span#title {
                 color: #aaaaaa;
@@ -39,7 +40,9 @@
         td {
             padding-right: 1em;
         }
-        li, ul {
+
+        li,
+        ul {
             margin-top: 0.5em
         }
 
@@ -47,9 +50,11 @@
         a:link {
             color: inherit;
         }
+
         a:visited {
             color: inherit;
         }
+
         a:hover {
             color: #27ae60;
             text-decoration: none;
@@ -62,15 +67,24 @@
     <header>
         <h1>
             <img alt="RuyiSDK Logo" src="./ruyi-logo-720.svg" style="width: 5%; display: inline;" />
-            <span id="title">RuyiSDK Eclipse 插件的更新站点</span>
+            <span id="title">RuyiSDK Eclipse 插件更新站点</span>
         </h1>
         <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/time -->
-        <time datetime="%PUBLISH_DATE%">%PUBLISH_DATE%</time>
+        <p><time datetime="%PUBLISH_DATE%">%PUBLISH_DATE%</time></p>
         <p><a href="./index.html">English</a></p>
     </header>
 
     <main>
         <article>
+            <section>
+                <h2>环境要求</h2>
+                <ol>
+                    <li>Eclipse IDE: 2024-12 (4.34) 及更新版本</li>
+                    <li>操作系统: Linux</li>
+                    <li>处理器架构: riscv64、aarch64、x86_64</li>
+                </ol>
+            </section>
+
             <section>
                 <h2>添加本站点</h2>
                 <ol>
@@ -106,9 +120,7 @@
                 <h2>需要帮助？</h2>
                 <ul>
                     <li>请您在 RISC-V 开发者社区发帖:
-                        <a href="https://ruyisdk.cn/">
-                            https://ruyisdk.cn/
-                        </a>
+                        <a href="https://ruyisdk.cn/">https://ruyisdk.cn/</a>
                     </li>
                     <li>您也可以在本插件的 GitHub 仓库提问:
                         <a href="https://github.com/ruyisdk/ruyisdk-eclipse-plugins/issues">
@@ -129,19 +141,25 @@
         <aside>
             <h2>另请参阅</h2>
             <ul>
-                <li>包含最新插件的 RuyiSDK Eclipse IDE: <a href="https://github.com/ruyisdk/ruyisdk-eclipse-plugins">
-                        GitHub
-                    </a></li>
+                <li>包含最新插件的 RuyiSDK Eclipse IDE:
+                    <a href="https://github.com/ruyisdk/ruyisdk-eclipse-plugins">GitHub</a>
+                </li>
                 <!-- TODO: https://marketplace.visualstudio.com/items?itemName= -->
                 <li>RuyiSDK VSCode 插件: <a href="https://github.com/ruyisdk/ruyisdk-vscode-extension">
                         GitHub</a>、Visual Studio 市场</li>
                 <li>RuyiSDK 官方网站: <a href="https://ruyisdk.org/">https://ruyisdk.org/</a></li>
                 <li>Eclipse 帮助文档
                     <ul>
-                        <li><a href="https://help.eclipse.org/topic/org.eclipse.platform.doc.user/tasks/tasks-127.htm">Adding
-                                a New Software Site</a></li>
-                        <li><a href="https://help.eclipse.org/topic/org.eclipse.platform.doc.user/tasks/tasks-120.htm">Updating
-                                the Installation</a></li>
+                        <li>
+                            <a href="https://help.eclipse.org/topic/org.eclipse.platform.doc.user/tasks/tasks-127.htm">
+                                Adding a New Software Site
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://help.eclipse.org/topic/org.eclipse.platform.doc.user/tasks/tasks-120.htm">
+                                Updating the Installation
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

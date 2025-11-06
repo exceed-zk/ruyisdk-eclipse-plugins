@@ -11,10 +11,10 @@ This is not a final version, but a continuous one based on the main branch for t
 
 ## Installation Methods
 
-1. In an empty directory, download and extract all files from `ruyisdk-eclipse-plugins.site.tar.gz`
+1. Download `ruyisdk-eclipse-plugins.site.zip`, no need to extract it
 1. Install "RuyiSDK IDE Feature" from a "Software Site" with the following information
-    - Name: `RuyiSDK Updates (Local)`
-    - Location: `file:///dir/path/`. Where `file://` is the protocol，and `/dir/path/` is the absolute path to the directory from the previous step
+    - Name: `RuyiSDK Updates (Archive)`
+    - Location: No need to fill it in by hand, instead click the "Archive..." button, and find the zip file from the previous step in the opened window
 
 ## Need Help?
 
@@ -54,10 +54,10 @@ If you have any questions:
 
 ## 安装方法
 
-1. 将 `ruyisdk-eclipse-plugins.site.tar.gz` 下载到一个空文件夹内并将其中的所有文件提取出来
-1. 添加包含如下内容的 "Software Site" 并从中安装 "RuyiSDK IDE Feature"
-    - Name: `RuyiSDK Updates (Local)`
-    - Location: `file:///dir/path/`。其中 `file://` 是协议，`/dir/path/` 是上一步中的文件夹的绝对路径
+1. 下载 `ruyisdk-eclipse-plugins.site.zip`，不需要解压缩
+1. 按照 "在线安装" 的步骤操作，并将填写的信息修改为如下内容
+    - Name: `RuyiSDK Updates (Archive)`
+    - Location: 不需要手动填写，而是单击 "Archive..." 按钮，在打开的窗口中找到上一步的 zip 文件
 
 ## 需要帮助？
 

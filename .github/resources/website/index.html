@@ -11,7 +11,7 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name/viewport#using_a_media_query_with_a_viewport_meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="prefetch" href="./index.html" as="document" />
+    <link rel="prefetch" href="./index.zh_Hans.html" as="document" />
 
     <style>
         body {
@@ -25,6 +25,7 @@
         span#title {
             color: #2c3e50;
         }
+
         @media (prefers-color-scheme: dark) {
             span#title {
                 color: #aaaaaa;
@@ -39,7 +40,9 @@
         td {
             padding-right: 1em;
         }
-        li, ul {
+
+        li,
+        ul {
             margin-top: 0.5em
         }
 
@@ -47,9 +50,11 @@
         a:link {
             color: inherit;
         }
+
         a:visited {
             color: inherit;
         }
+
         a:hover {
             color: #27ae60;
             text-decoration: none;
@@ -72,9 +77,19 @@
     <main>
         <article>
             <section>
+                <h2>Environment Requirements</h2>
+                <ol>
+                    <li>Eclipse IDE: 2024-12 (4.34) or newer</li>
+                    <li>Operating System: Linux</li>
+                    <li>Processor Architecture: riscv64, aarch64 and x86_64</li>
+                </ol>
+            </section>
+
+            <section>
                 <h2>Add this Site</h2>
                 <ol>
-                    <li>Launch the IDE, open the "Help" menu at the top menu bar, and click "Install New Software..."</li>
+                    <li>Launch the IDE, open the "Help" menu at the top menu bar, and click "Install New Software..."
+                    </li>
                     <li>In the opened window, click the "Add..." button to open the "Add Repository" dialog</li>
                     <li>
                         Fill in the following information and click the "Add" button
@@ -89,8 +104,10 @@
                             </tr>
                         </table>
                     </li>
-                    <li>Go back to the "Install" window, and choose the newly added site from the "Work with" dropdown box</li>
-                    <li>After the information is loaded, expand "RuyiSDK IDE" and check "RuyiSDK IDE Feature", then click the "Next >" button to start the installation</li>
+                    <li>Go back to the "Install" window, and choose the newly added site from the "Work with" dropdown
+                        box</li>
+                    <li>After the information is loaded, expand "RuyiSDK IDE" and check "RuyiSDK IDE Feature", then
+                        click the "Next >" button to start the installation</li>
                 </ol>
             </section>
 
@@ -98,7 +115,9 @@
                 <h2>Check for Updates</h2>
                 <ol>
                     <li>Launch the IDE, open the "Help" menu from the top menu bar, and click "Check for Updates"</li>
-                    <li>After the "Available Updates" window opens, if "RuyiSDK IDE Feature" appears in the table, it means a new version of this plugin has been released. Click the "Next >" button to start the update</li>
+                    <li>After the "Available Updates" window opens, if "RuyiSDK IDE Feature" appears in the table, it
+                        means a new version of this plugin has been released. Click the "Next >" button to start the
+                        update</li>
                 </ol>
             </section>
 
@@ -106,9 +125,7 @@
                 <h2>Need Help?</h2>
                 <ul>
                     <li>Please create posts in "RISC-V Developer Community":
-                        <a href="https://ruyisdk.cn/">
-                            https://ruyisdk.cn/
-                        </a>
+                        <a href="https://ruyisdk.cn/">https://ruyisdk.cn/</a>
                     </li>
                     <li>You can also ask questions in the GitHub repository of this repository:
                         <a href="https://github.com/ruyisdk/ruyisdk-eclipse-plugins/issues">
@@ -129,19 +146,25 @@
         <aside>
             <h2>See Also</h2>
             <ul>
-                <li>RuyiSDK Eclipse IDE containing the latest plugin: <a href="https://github.com/ruyisdk/ruyisdk-eclipse-plugins">
-                        GitHub
-                    </a></li>
+                <li>RuyiSDK Eclipse IDE containing the latest plugin:
+                    <a href="https://github.com/ruyisdk/ruyisdk-eclipse-plugins">GitHub</a>
+                </li>
                 <!-- TODO: https://marketplace.visualstudio.com/items?itemName= -->
                 <li>RuyiSDK VSCode plugin: <a href="https://github.com/ruyisdk/ruyisdk-vscode-extension">
                         GitHub</a> and Visual Studio Marketplace</li>
                 <li>RuyiSDK official website: <a href="https://ruyisdk.org/">https://ruyisdk.org/</a></li>
                 <li>Eclipse Help Documentation
                     <ul>
-                        <li><a href="https://help.eclipse.org/topic/org.eclipse.platform.doc.user/tasks/tasks-127.htm">Adding
-                                a New Software Site</a></li>
-                        <li><a href="https://help.eclipse.org/topic/org.eclipse.platform.doc.user/tasks/tasks-120.htm">Updating
-                                the Installation</a></li>
+                        <li>
+                            <a href="https://help.eclipse.org/topic/org.eclipse.platform.doc.user/tasks/tasks-127.htm">
+                                Adding a New Software Site
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://help.eclipse.org/topic/org.eclipse.platform.doc.user/tasks/tasks-120.htm">
+                                Updating the Installation
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
