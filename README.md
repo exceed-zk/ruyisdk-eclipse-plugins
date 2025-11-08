@@ -102,8 +102,6 @@ mvn clean verify
 - 使用提供的代码模板和格式化配置
 
 ## 文档
-
-- [构建指南](BUILD.md) - 详细的构建说明
 - [开发者文档](docs/developer/) - 开发和贡献指南
 - [学习笔记](https://github.com/xijing21/eclipse-myplugins) - Eclipse 插件开发学习资料
 
