@@ -53,9 +53,9 @@
 
 ### 构建要求（开发者）
 
-- Java 17 或更高版本（已测试 JDK 17、21）
+- Java 17 或更高版本（已测试 JDK 17、21、25）
 - Apache Maven 3.9.0 或更高版本
-- 足够的磁盘空间 (建议 20GB+)
+- 足够的磁盘空间 (建议 40GB+)
 
 ### 构建插件
 
@@ -83,20 +83,6 @@ mvn clean verify
    - **Location**: `file:///path/to/extracted/zip/`
 5. 选择 `RuyiSDK IDE` 并安装
 
-### 集成到 IDE 打包
-
-```bash
-# 1. 先构建插件（如上所示）
-
-# 2. 构建包含插件的 RuyiSDK IDE
-cd ../ruyisdk-eclipse-packages
-mvn clean verify -Pepp.p2.common -Pepp.product.embedcpp -Pepp.p2.embedcpp -Pepp.materialize-products
-
-# 3. 获取构建产物
-ls -l ./packages/org.eclipse.epp.package.embedcpp.product/target/products/ruyisdk-*.tar.gz
-```
-
-详细的构建说明和故障排除，请参阅 [BUILD.md](BUILD.md)。
 
 ## 版本兼容性
 
@@ -105,24 +91,6 @@ ls -l ./packages/org.eclipse.epp.package.embedcpp.product/target/products/ruyisd
 | 0.0.5          | 2024-12     | 4.0.10    | 17+     | x86_64, aarch64, riscv64 |
 | 0.0.4          | 2024-12     | 4.0.10    | 21+     | x86_64, aarch64, riscv64 |
 | 0.0.3          | 2024-09     | 4.0.8     | 21+     | x86_64, aarch64, riscv64 |
-
-## 开发
-
-### 导入到 Eclipse IDE
-
-**注意**：本项目使用 Tycho pom-less builds。
-
-1. 打开 Eclipse IDE (建议使用 Eclipse for RCP and RAP Developers)
-2. File → Import → Maven → Existing Maven Projects
-3. 选择 `ruyisdk-eclipse-plugins` 目录
-4. 只会看到根项目，点击 Finish
-5. 项目导入后，各个插件会自动被识别为 Eclipse 插件项目
-
-### 运行和调试
-
-1. 右键点击插件项目
-2. Run As → Eclipse Application
-3. 将启动一个包含您的插件的新 Eclipse 实例
 
 ## 贡献
 
