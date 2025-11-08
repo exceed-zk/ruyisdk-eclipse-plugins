@@ -31,18 +31,29 @@
 
 ### 在线安装（用户）
 
-通过 Eclipse 更新站点安装插件：
+#### 方式一：使用 RuyiSDK IDE（推荐）
+
+如果您使用的是 RuyiSDK IDE，更新站点已预配置：
+
+1. 打开 RuyiSDK IDE
+2. `Help` → `Install New Software...`
+3. 从下拉列表中选择：`RuyiSDK Updates (GitHub) - https://ruyisdk.github.io/ruyisdk-eclipse-plugins/`
+4. 选择 `RuyiSDK IDE` 并安装
+
+#### 方式二：手动添加更新站点
+
+在标准 Eclipse IDE 中：
 
 1. 打开 Eclipse IDE
 2. `Help` → `Install New Software...`
 3. 点击 `Add...`，输入：
-   - **Name**: `RuyiSDK Plugins`
-   - **Location**: `https://exceed-zk.github.io/ruyisdk-eclipse-plugins/`
+   - **Name**: `RuyiSDK Updates`
+   - **Location**: `https://ruyisdk.github.io/ruyisdk-eclipse-plugins/`
 4. 选择 `RuyiSDK IDE` 并安装
 
 ### 构建要求（开发者）
 
-- Java 21 或更高版本
+- Java 17 或更高版本（已测试 JDK 17、21）
 - Apache Maven 3.9.0 或更高版本
 - 足够的磁盘空间 (建议 20GB+)
 
@@ -57,8 +68,20 @@ cd ruyisdk-eclipse-plugins
 mvn clean verify
 
 # 构建结果位于
-# repository/target/repository/
+# sites/repository/target/repository/
 ```
+
+### 离线安装（使用 zip 包）
+
+从 [Releases](https://github.com/ruyisdk/ruyisdk-eclipse-plugins/releases) 下载 `ruyisdk-eclipse-plugins.site.zip`，然后：
+
+1. 解压 zip 文件到本地目录
+2. 打开 Eclipse IDE
+3. `Help` → `Install New Software...` → `Add...`
+4. 输入：
+   - **Name**: `RuyiSDK Plugins (Local)`
+   - **Location**: `file:///path/to/extracted/zip/`
+5. 选择 `RuyiSDK IDE` 并安装
 
 ### 集成到 IDE 打包
 
@@ -77,19 +100,23 @@ ls -l ./packages/org.eclipse.epp.package.embedcpp.product/target/products/ruyisd
 
 ## 版本兼容性
 
-| RuyiSDK Plugins | Eclipse 版本 | Tycho 版本 | 支持架构 |
-|----------------|-------------|-----------|---------|
-| 0.0.4          | 2024-12     | 4.0.10    | x86_64, aarch64, riscv64 |
-| 0.0.3          | 2024-09     | 4.0.8     | x86_64, aarch64, riscv64 |
+| RuyiSDK Plugins | Eclipse 版本 | Tycho 版本 | JDK 版本 | 支持架构 |
+|----------------|-------------|-----------|---------|---------|
+| 0.0.5          | 2024-12     | 4.0.10    | 17+     | x86_64, aarch64, riscv64 |
+| 0.0.4          | 2024-12     | 4.0.10    | 21+     | x86_64, aarch64, riscv64 |
+| 0.0.3          | 2024-09     | 4.0.8     | 21+     | x86_64, aarch64, riscv64 |
 
 ## 开发
 
 ### 导入到 Eclipse IDE
 
+**注意**：本项目使用 Tycho pom-less builds。
+
 1. 打开 Eclipse IDE (建议使用 Eclipse for RCP and RAP Developers)
 2. File → Import → Maven → Existing Maven Projects
 3. 选择 `ruyisdk-eclipse-plugins` 目录
-4. 选择所有项目并点击 Finish
+4. 只会看到根项目，点击 Finish
+5. 项目导入后，各个插件会自动被识别为 Eclipse 插件项目
 
 ### 运行和调试
 
