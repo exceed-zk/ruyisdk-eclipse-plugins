@@ -112,10 +112,15 @@ mvn clean verify
 
 ## 许可证
 
-Copyright (c) 2024 RuyiSDK and others.
+Copyright (C) Institute of Software, Chinese Academy of Sciences (ISCAS). All rights reserved.
+
+版权所有 © 中国科学院软件研究所（ISCAS）。保留所有权利。
 
 本项目采用 Eclipse Public License v2.0 许可。
 详见 [LICENSE](LICENSE) 文件。
+
+This project is licensed under the EPL-2.0 License.
+See [LICENSE](LICENSE) for details.
 
 ## 支持
 
