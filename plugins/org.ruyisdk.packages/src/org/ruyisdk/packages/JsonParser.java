@@ -1,24 +1,31 @@
 package org.ruyisdk.packages;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.io.StringReader;
-import javax.json.Json;
-import javax.json.JsonReader;
-import javax.json.JsonStructure;
-import javax.json.JsonObject;
-import javax.json.JsonArray;
-import javax.json.JsonValue;
-import javax.json.*;
-
-import org.ruyisdk.ruyi.util.RuyiFileUtils;
-
-import java.io.StringReader;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.List;
+import javax.json.Json;
+import javax.json.JsonArray;
+import javax.json.JsonObject;
+import javax.json.JsonReader;
+import javax.json.JsonStructure;
+import javax.json.JsonValue;
+import org.ruyisdk.ruyi.util.RuyiFileUtils;
 
+/**
+ * JSON parser for package tree data.
+ */
 public class JsonParser {
 
+    /**
+     * Parses JSON data into a tree structure.
+     *
+     * @param jsonData JSON string data
+     * @param downloadedFiles set of downloaded files
+     * @param hardwareType hardware type for root node
+     * @return parsed tree node
+     */
     public static TreeNode parseJson(String jsonData, java.util.Set<String> downloadedFiles, String hardwareType) {
         try (JsonReader reader = Json.createReader(new StringReader(jsonData))) {
             JsonStructure jsonStructure = reader.read();
@@ -88,7 +95,12 @@ public class JsonParser {
         return categoryNode;
     }
 
-
+    /**
+     * Parses all entity IDs from a JSON line.
+     *
+     * @param jsonLine JSON line string
+     * @return list of entity IDs
+     */
     public static List<String> parseAllEntityIdsInOneLine(String jsonLine) {
         List<String> entityIds = new ArrayList<>();
         int bracketCount = 0;
@@ -104,13 +116,36 @@ public class JsonParser {
                 bracketCount--;
                 if (bracketCount == 0 && start != -1) {
                     // get fully json
-                    String singleObject = jsonLine.substring(start, i + 1);
-                    parseSingleObject(singleObject, entityIds);
-                    start = -1;
+                    String jsonFragment = jsonLine.substring(start, i + 1);
+                    String id = extractEntityId(jsonFragment);
+                    if (id != null) {
+                        entityIds.add(id);
+                    }
                 }
             }
         }
         return entityIds;
+    }
+
+    /**
+     * Extracts the entity ID from a JSON fragment.
+     *
+     * @param jsonFragment JSON fragment string
+     * @return entity ID or null if not found
+     */
+    private static String extractEntityId(String jsonFragment) {
+        try (JsonReader reader = Json.createReader(new StringReader(jsonFragment))) {
+            JsonValue value = reader.read();
+            if (value.getValueType() == JsonValue.ValueType.OBJECT) {
+                JsonObject obj = value.asJsonObject();
+                if (obj.containsKey("entity_id")) {
+                    return obj.getString("entity_id");
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("无法解析的 JSON 对象: " + jsonFragment);
+        }
+        return null;
     }
 
     private static void parseSingleObject(String jsonStr, List<String> entityIds) {
@@ -146,6 +181,12 @@ public class JsonParser {
         }
     }
 
+    /**
+     * Finds installed toolchain for board.
+     *
+     * @param boardName board name
+     * @return toolchain path or null
+     */
     public static String findInstalledToolchainForBoard(String boardName) {
         if (boardName == null || boardName.trim().isEmpty()) {
             return null;
@@ -182,16 +223,18 @@ public class JsonParser {
             try (JsonReader reader = Json.createReader(new StringReader(jsonData))) {
                 JsonArray jsonArray = reader.readArray();
                 for (JsonValue value : jsonArray) {
-                    if (value.getValueType() != JsonValue.ValueType.OBJECT)
+                    if (value.getValueType() != JsonValue.ValueType.OBJECT) {
                         continue;
+                    }
 
                     JsonObject pkgObject = (JsonObject) value;
                     String category = pkgObject.getString("category", "");
 
                     if ("toolchain".equals(category)) {
                         JsonArray versions = pkgObject.getJsonArray("vers");
-                        if (versions == null)
+                        if (versions == null) {
                             continue;
+                        }
 
                         for (JsonValue verValue : versions) {
                             JsonObject verObject = (JsonObject) verValue;
