@@ -332,7 +332,6 @@ public class RuyiInstallWizard extends Wizard {
 
             installManager.setInstallPath(configPage.getInstallPath());
             installManager.setRepoUrls(configPage.getSelectedRepos());
-            installManager.setTelemetryStatus(configPage.getTelemetryStatus());
 
             progressComp.appendLog("Starting " + (mode == Mode.INSTALL ? "installation" : "upgrade") + "...");
 
