@@ -1,5 +1,10 @@
 package org.ruyisdk.projectcreator.launch;
 
+import static org.ruyisdk.projectcreator.launch.LaunchConstants.ATTR_LOCATION;
+import static org.ruyisdk.projectcreator.launch.LaunchConstants.ATTR_TOOL_ARGUMENTS;
+import static org.ruyisdk.projectcreator.launch.LaunchConstants.ATTR_WORKING_DIRECTORY;
+import static org.ruyisdk.projectcreator.launch.LaunchConstants.ID_PROGRAM_LAUNCH_CONFIGURATION_TYPE;
+
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.QualifiedName;
